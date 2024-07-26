@@ -1,0 +1,34 @@
+When AH is 2 then int 33 prints DL
+When AH is 76 then int 33 stops execution
+
+
+
+Every number is between 0 and 255.
+When two numbers are added and sum exceeds 255 then 256 is subtracted from the result and carry is set (made 1)
+Add(130,200) is 74 because 330-256 = 74.
+
+
+
+adc(x,y) means x + y + carry
+
+add(130,200) = 330 = 330-256   = 74 with carry : (74 -> J)
+adc(80,5) = 80 + 5 + 1 (carry) = 86            : (86 -> V)
+
+add(130,200) = 330 = 330-256      = 74 (with carry)           : (74 -> J)
+adc(40,40) = 40 + 40 + 1 (carry)  = 81 (no further carry)     : (81 -> Q)
+adc(220,120) = 340 + 0 (no carry) = 340-256 = 84 (with carry) : (84 -> T)
+adc(8,80) = 8 + 80 + 1 (carry)    = 89 (no further carry)     : (89 -> Y)
+
+
+
+p+100+150 will generate carry when p is between 6 and 155.
+When p is 5   then 5+100=105           105+150=255<256 no carry
+When p is 10  then 10+100=110          110+150=260=4   carry
+When p is 156 then 156+100=256=0 carry 0+156=156       no carry.
+Though intermediate carry will come but finally no carry.
+
+p+100+p+10 will generate carry when p is between 73 and 77 or between 201 and 205.
+When p=72  then 72+100+72+10=254 < 256                         no carry
+When p=75  then 75+100+75=250  250+10=260=4 and                carry
+When p=78  then 78+100=178 178+78=256=0 carry  0+10=10 finally no carry
+When p=201 then 201+100+201=502=246  246+10=256=0              carry

@@ -1,0 +1,3 @@
+p+103+p will generate carry for which values of p.
+
+Ans: 77 to 152
