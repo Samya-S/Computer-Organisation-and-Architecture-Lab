@@ -1,0 +1,10 @@
+1: What is 3Eh+14h DAA
+   Show method. 
+   Convert both of these in decimal. 
+   Add them. Find carry and auxiliary carry. 
+   Then apply DAA. Now convert the result is hexadecimal.
+
+Ans: 62+20=82 
+    (62 mod 16)+(20 mod 16)=14+4>15 
+    hence 6 is added 
+    82+6=88=58h
