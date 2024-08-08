@@ -31,7 +31,6 @@ End
 
 ; Output: 
 ;         p
-; /****** need to verify ******/
 
 
 ; 15h+37h=4Ch 15+37=52 LR  52h=82  LSB non digit add 6
