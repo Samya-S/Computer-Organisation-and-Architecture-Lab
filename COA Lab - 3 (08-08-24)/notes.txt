@@ -1,0 +1,23 @@
+Byte size registers: AL, AH, BH, BL, CH, CL, DH, DL
+
+
+1. During printing, value of AL is modified as DL
+
+2. Mul BL 
+    Computes AL*BL and stores in (256*AH + AL) i.e AH:AL
+    AH = (result / 256)  
+    AL = (result % 256)
+    alternate: result = AH*256 + AL = AH:AL
+    AH:AL is short form of AH*256+AL.
+
+3. Div BL
+    AH = (AH:AL) % BL
+    AL = (AH:AL) / BL
+    System hangs if quotient > 255
+
+
+
+Mul BX computes (256AH+AL)*(256BH+BL) and stores in 256^3DH+256^2DL+256AH+AL
+
+Div BX computes (256*DH+DL)=(256^3DH+256^2DL+256AH+AL)mod BX   
+                (256*AH+AL)=(256^3DH+256^2DL+256AH+AL)div BX
