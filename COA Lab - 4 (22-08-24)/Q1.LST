@@ -1,0 +1,42 @@
+Microsoft (R) Macro Assembler Version 5.00                  8/22/24 14:42:57
+                                                             Page     1-1
+
+
+				.model small 
+ 0000				.code 
+ 0000  B4 02			db 180,2 ; Mov AH,2 
+ 0002  B2 48			db 178,72; Mov DL,72 
+ 0004  CD 21			db 205,33; Int 33 
+ 0006  B4 4C			db 180,76; Mov AH,76 
+ 0008  CD 21			db 205,33; Int 33 
+ 000A				End 
+Microsoft (R) Macro Assembler Version 5.00                  8/22/24 14:42:57
+                                                             Symbols-1
+
+
+Segments and Groups:
+
+                N a m e         	Length	 Align	Combine Class
+
+DGROUP . . . . . . . . . . . . .  	GROUP
+  _DATA  . . . . . . . . . . . .  	0000	WORD	PUBLIC	'DATA'
+_TEXT  . . . . . . . . . . . . .  	000A	WORD	PUBLIC	'CODE'
+
+Symbols:            
+
+                N a m e         	Type	 Value	 Attr
+
+@CODE  . . . . . . . . . . . . .  	TEXT  _TEXT		
+@CODESIZE  . . . . . . . . . . .  	TEXT  0		
+@DATASIZE  . . . . . . . . . . .  	TEXT  0		
+@FILENAME  . . . . . . . . . . .  	TEXT  l4q1		
+
+
+      8 Source  Lines
+      8 Total   Lines
+     13 Symbols
+
+  51252 + 465292 Bytes symbol space free
+
+      0 Warning Errors
+      0 Severe  Errors

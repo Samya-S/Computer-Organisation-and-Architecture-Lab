@@ -1,0 +1,30 @@
+byte registers AL(0),CL(1),DL(2),BL(3),AH(4),CH(5),DH(6),BH(7)
+
+Mov Reg,no  176+Reg,no
+Int 33      205,33
+
+k lines ahead  235,k
+
+
+
+Let R and S be registers
+Mov R,S has machine code 138,192+8*R+S
+
+
+
+machine code of Mov DL,cs:[16] is in 5 numbers
+
+
+
+Mov cs:[12],BL (5)
+Adc cs:[12],BL (5)
+Adc cs:[12],byte ptr 2  (6)
+Cmp BL,20 (3)  Cmp BL,CL (2)
+Sub CL,20 (3) it does CL=CL-20 if initial CL<20 carry 1 else 0
+
+
+
+Cmp a,b if a<b then carry is 1 else carry is 0
+Adc a,b a=a+b+carry
+if p<80 then Y else M 
+If p<80 then Mov DL,AL[138,192+8*2+0] is modified as Mov DL,CL [138,192+8*2+1]  change m/c code of mov DL,AL
