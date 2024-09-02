@@ -1,0 +1,33 @@
+A number 0..127 is treated as positive.
+A number(y) 128..255 is treated as negative with value y-256.
+
+220 is 220-256=-36
+226 is 226-256=-30
+
+imul R will perform AH*256+AL=R*AL (-36)*(-30)=1080=256*4+56 Hence output of following program is ascii 4 and 56.
+R can be AL,BL,CL,DL,AH,BH,CH,DH
+
+When imul is replaced by mul then unsigned multiplication is done. Ascii of 194 and 56.
+Calculator will not be permitted.
+220*226=(256-36)*(256-30)=256*256-(30+36)*256+36*30=256*(256-66+4)+56=256*194+56
+
+When 220 and 30 are multiplied then (-36)*(+30)=-1080=256*(-5)+200 
+hence ascii of (256-5)=251 and 200 are outputted.
+
+Do imul 216,226 (-30)*(-40)=1200=256*4+176 ascii 4 and 176
+mul 216 and 226 (256-40)*(256-30)=256*256-(30+40)*256+1200=256*(256-70)+256*4+176=256*(256-66)+176 190,176
+
+
+idiv R finds AL=(256*AH+AL) div R  AH=(256*AH+AL) mod R
+k=256*4+56+12=1080+12=1092=(-30)(-36)+12 AL=-36=220 and AH=12
+
+AH=4   AL=56+12 CH=30 1092=(+30)*(+36)+12  AL=36 AH=12 same as div
+AH=251 AL=188 CH=226 k=(251-256)*256+188=-1280+188=-1092=(-30)*(+36)-12  AL=36 AH=-12 i.e. 244
+AH=251 AL=188 CH=30  k=-1092=(+30)*(-36)-12  AL=-36 i.e. 220 AH=-12 i.e. 244
+
+Sign of remainder (AH) is same as sign of numerator. Sign of numerator depends on sign of AH. Sign of AL has no role to play.
+
+
+Question: AH=4 AL=68 what should be CH so that idiv and div are different.
+Question: Assume iadd does signed addition. What do you expect in iadd/add of 90 and 140?
+Do these for 200+200
