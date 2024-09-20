@@ -63,7 +63,7 @@ Implementation of the following topics:
 
 Clone this repository:  
 ```bash
-git clone https://github.com/Samya-S/Programming-and-Data-Structures-Lab.git
+git clone https://github.com/Samya-S/Computer-Organisation-and-Architecture-Lab.git
 ```
 
 
