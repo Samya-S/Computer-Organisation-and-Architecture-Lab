@@ -1,0 +1,12 @@
+Q2: y+26.1763 
+    Write all integer values of y between 0 and 5000 so that answer in 4 significant digits is bigger than actual answer
+
+Example: y+6.27529
+         Let y=400 406.27529 in 4 digits is 406.3 It is greater than actual answer 406.27529.
+         Let y=83   89.27529 in 4 digits is  89.28 It is also greater than actual answer 89.27529 
+         Let y=1     7.27529 in 4 digits is 7.275 It is smaller than actual answer 7.27529.
+         Let y=1000 1006.27529 in 4 digits is 1006. It is smaller.
+         A range of 83-400 will work but it can be made bigger
+
+Solution: y+26.1763: After decimal 1 or 2 digits. Hence [10-999]-26 is range 
+                     i.e. 0 and 973
