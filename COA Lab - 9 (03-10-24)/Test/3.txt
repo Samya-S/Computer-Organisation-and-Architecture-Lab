@@ -1,0 +1,17 @@
+Q3: For which k between 10 and 100 the following program outputs LS. Hint: binary representation of 0.8 is 0.110011001100....
+    Float stores 24 significant bits.
+
+    #include <stdio.h>
+    int main()
+    {   int k=missing;float a=k+0.8;
+        if (a>k+0.8) printf("GT");
+        if (a<k+0.8) printf("LS");
+        if (a==k+0.8) printf("EQ");
+        return 0;
+    }
+
+Solution: 16-63 
+Reason: 15.8=1111.1100+1 
+        16.8=10000.110  
+        63.8=111111.11 
+        64.8=1000000.1+1
