@@ -1,0 +1,27 @@
+#include <stdio.h>
+int z[]={least missing numbers};
+int r[10];
+int main()
+{   int ir=0,a,b,k,cy=0;r[8]=0;
+    while(1)
+    {  ir=z[r[8]];r[8]++;
+       a=ir/10;b=ir%10;
+       if(a<5) {k=r[b];
+         if(b==5) k=r[3]+r[4];
+         if(b==6) { k=r[3]-r[4]; cy=(k<0); }
+         r[a]=k;
+       }
+       if(a>7) { r[a]=b; }
+       if(a==7) if (cy==0) r[8]=b;
+       if(a==6) printf("%d,",r[b]);
+       if(ir==50) r[1]=z[r[9]];if(ir==51) z[r[9]]=r[1];
+       if(ir==52) break;
+    } 
+}
+
+Q2: Write condition in above program. On 54 the previous number is printed.
+Example z[]={91,84,93,95,54,69,52} Output 95,1,  z[]={91,54,52} output 91,
+Example: On 53 input is taken in r[9] the condition is 
+if(ir==53) { printf("Give input");scanf("%d",&r[9]); }
+
+Solution: if(ir==54)  printf("%d,",z[r[8]-2]);
